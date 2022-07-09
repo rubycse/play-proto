@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+enum Gender {
+  GENDER_UNASSIGNED = 0;
+  MALE = 1;
+  FEMALE = 2;
+  OTHER = 3;
+}
+
+message Hobby {
+  uint32 id = 1;
+  string name = 2;
+}
+
+enum Relation {
+  RELATION_UNDEFINED = 0;
+  SPOUSE = 1;
+  FATHER = 2;
+  MOTHER = 3;
+  SISTER = 4;
+  BROTHER = 5;
+  SON = 6;
+  DAUGHTER = 7;
+}
+
+message Person {
+  uint32 id = 1;
+  string name = 2;
+  Gender gender = 3;
+  repeated Hobby hobbies = 4;
+  map<uint32, string> family_members = 5;
+}
+
